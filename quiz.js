@@ -1,7 +1,7 @@
 function check() {
     var c = 0;
     var neg = 0;
-    var score;
+    var scoreWithNeg;
     var q1 = document.quiz.q1.value;
     var q2 = document.quiz.q2.value;
     var q3 = document.quiz.q3.value;
@@ -210,7 +210,7 @@ function check() {
     if (q100 == "a") { c = c + 2; }
 
     neg = (140 - c) * 0.1;
-    score = c - neg;
+    scoreWithNeg = c - neg;
     //document.write("Your score is: " + c);
     //document.body.appendChild(document.createElement('p'));
     //document.querySelector("body p:last-child").id = "jstext";
@@ -219,7 +219,8 @@ function check() {
     //document.getElementById("test").innerHTML = c;
     //document.write('<p class="jstext">' + c + '</p>');
     const myWindow = window.open();
-    myWindow.document.write('<h1>', "Your score is: " + score + '</h1>');
+    myWindow.document.write('<h1>', "Your score(without negative marking) is: " + c + '</h1>');
+    myWindow.document.write('<h1>', "Your score(with negative marking) is: " + scoreWithNeg + '</h1>');
 
 
 }
